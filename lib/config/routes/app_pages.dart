@@ -1,30 +1,36 @@
 import 'package:job_app/app_imports.dart';
+import 'package:job_app/mvvm/view/splash.dart';
 import 'package:job_app/mvvm/viewModel/bindings/job_bindings.dart';
 
 class AppPages {
-  static const initial = AppRoutes.registerScreen;
+  static const initial = AppRoutes.initial;
 
   static final routes = [
+    // initial Splash
+    GetPage(
+      name: AppRoutes.initial,
+      page: () => Splash(),
+      binding: AuthBindings(),
+    ),
+    // Register
     GetPage(
       name: AppRoutes.registerScreen,
-      page: () => RegisterScreen(),
-      bindings: [RegisterBindings(), AuthBindings()],
+      page: () => const RegisterScreen(),
+      binding: RegisterBindings(),
     ),
 
     // Login Screen
     GetPage(
       name: AppRoutes.loginScreen,
-      page: () => LoginScreen(),
+      page: () => const LoginScreen(),
       binding: LoginBindings(),
-      // middlewares: []
     ),
 
     // Jobs Listing Screen
     GetPage(
       name: AppRoutes.jobsList,
-      page: () => JobListingScreen(),
+      page: () => const JobListingScreen(),
       binding: JobBindings(),
-      // transition: Transition.rightToLeft,
     ),
 
     // Add Job Screen
@@ -32,7 +38,6 @@ class AppPages {
       name: AppRoutes.addJob,
       page: () => AddJobScreen(),
       binding: JobBindings(),
-      // transition: Transition.upToDown,
     ),
 
     // You Can Add Mode Pages Below

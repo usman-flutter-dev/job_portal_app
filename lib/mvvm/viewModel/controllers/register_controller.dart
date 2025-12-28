@@ -7,6 +7,12 @@ class RegisterController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  void clearFields() {
+    fullNameController.clear();
+    emailController.clear();
+    passwordController.clear();
+  }
+
   @override
   void onClose() {
     super.onClose();
@@ -26,7 +32,6 @@ class RegisterController extends GetxController {
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
     final fullName = fullNameController.text.trim();
-    // Lets do some Validations like
     // All Fields must not be Empty
     if (email.isEmpty || password.isEmpty || fullName.isEmpty) {
       Get.snackbar(
@@ -84,12 +89,10 @@ class RegisterController extends GetxController {
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: AppColors.successGreen,
         colorText: AppColors.white,
-        duration: Duration(seconds: 3),
+        // duration: Duration(seconds: 3),
         borderRadius: 13,
         margin: EdgeInsets.all(16),
       );
-
-      //
       Get.offAllNamed(AppRoutes.jobsList);
     } on FirebaseAuthException catch (e) {
       RxString errorMessage = "".obs;

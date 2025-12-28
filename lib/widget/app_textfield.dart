@@ -2,10 +2,11 @@ import 'package:job_app/app_imports.dart';
 
 class AppTextField extends StatelessWidget {
   final String hintText;
-  final bool obscureText;
+  final bool? obscureText;
   final TextAlignVertical? textAlignVertical;
   final Icon? suffixIcon;
   final TextEditingController? controller;
+  final int? maxLines;
 
   const AppTextField({
     super.key,
@@ -13,7 +14,8 @@ class AppTextField extends StatelessWidget {
     this.controller,
     this.suffixIcon,
     this.textAlignVertical,
-    this.obscureText = false, // Defaults to false
+    this.obscureText = false,
+    this.maxLines,
   });
 
   @override
@@ -27,8 +29,8 @@ class AppTextField extends StatelessWidget {
       ),
       child: TextField(
         controller: controller,
-        obscureText: obscureText,
-        maxLines: null,
+        obscureText: obscureText!,
+        // maxLines: maxLines,
         // scrollPhysics: NeverScrollableScrollPhysics(),
         style: GoogleFonts.poppins(color: AppColors.white, fontSize: 15),
         decoration: InputDecoration(

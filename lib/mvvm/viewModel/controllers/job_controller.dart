@@ -1,8 +1,5 @@
 // job_controller.dart
-import 'package:flutter/rendering.dart';
-import 'package:get/get.dart';
 import 'package:job_app/app_imports.dart';
-import 'package:job_app/config/utility/app_colors.dart';
 import 'package:job_app/mvvm/model/job_model.dart';
 
 class JobController extends GetxController {

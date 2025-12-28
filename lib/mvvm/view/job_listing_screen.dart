@@ -2,12 +2,11 @@ import 'package:job_app/app_imports.dart';
 import 'package:job_app/mvvm/viewModel/controllers/job_controller.dart';
 
 class JobListingScreen extends StatelessWidget {
-  JobListingScreen({super.key});
-
-  final JobController jobController = Get.find<JobController>();
+  const JobListingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final jobController = Get.find<JobController>();
     return Scaffold(
       backgroundColor: AppColors.primaryBackground,
       body: SafeArea(
