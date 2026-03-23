@@ -1,5 +1,5 @@
 
-# A Job App: Flutter MVVM with GetX
+# A Job Portal App: Flutter MVVM with GetX
 
 A modern job listing and management application built using Flutter, following the **Model-View-ViewModel (MVVM)** architectural pattern for clean separation of concerns and maintainable code. State management and routing are handled by the **GetX** package.
 
